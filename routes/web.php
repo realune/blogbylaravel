@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,9 @@ Route::post('/blog/update', [BlogController::class, 'exeUpdate'])->name('update'
 
 // Delete blog
 Route::post('/blog/delete', [BlogController::class, 'exeDelete'])->name('delete');
+
+// Show login display
+Route::get('/', [AuthController::class, 'showLogin'])->name('showLogin');
+
+// Login
+Route::post('/login', [AuthController::class, 'login'])->name('login');
