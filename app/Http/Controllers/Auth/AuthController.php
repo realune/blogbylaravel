@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Requests\LoginFormRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,11 @@ class AuthController extends Controller
         return view('login.login_form');
     }
 
-    public function login() {
-
+    /**
+     * Login
+     * @param App\Http\Requests\LoginFormRequest $request
+     */
+    public function login(LoginFormRequest $request) {
+        dd($request->all());
     }
 }
